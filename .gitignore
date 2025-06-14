@@ -1,0 +1,26 @@
+# ⚠️ Archivos sensibles
+.env
+
+# 🗂️ Datos locales (como IDs vistos)
+data/seen_ids.json
+
+# 🐍 Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 📦 Entornos virtuales (si llegás a usar uno)
+venv/
+.env/
+.venv/
+
+# 📄 Logs
+*.log
+
+# 🐳 Docker
+*.pid
+*.sock
+
+# VS Code config (opcional si usás VSCode)
+.vscode/

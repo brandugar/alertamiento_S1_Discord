@@ -1,0 +1,9 @@
+services:
+  s1-alerts-bot:
+    build: .
+    container_name: s1-alerts-bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
