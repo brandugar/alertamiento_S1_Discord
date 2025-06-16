@@ -19,6 +19,11 @@ CONSOLES = [
         "url": os.getenv('S1_CONSOLE_2'),
         "token": os.getenv('S1_TOKEN_2'),
         "seen_file": "data/seen_ids_2.json"
+    },
+    {
+        "url": os.getenv('S1_CONSOLE_3'),
+        "token": os.getenv('S1_TOKEN_3'),
+        "seen_file": "data/seen_ids_3.json"
     }
 ]
 
@@ -62,6 +67,15 @@ def get_alerts(console_url, token):
 
 
 def send_to_discord(threat):
+    sitio = threat.get("agentRealtimeInfo", "Unknown Host").get(
+        "siteName", "Unknown Site")
+    cliente = threat.get("agentRealtimeInfo", "Unknown Host").get(
+        "accountName", "Unknown Client")
+    if cliente == "CLM SOFTWARE COMERCIO,IMPORTACAO E EXPORTACAO LTDA":
+        if sitio == "CO_VENTURA SYSTEMS - ANTIOQUIA GOLD":
+            cliente = "Antioquiagold"
+        else:
+            return
     hostname = threat.get("agentRealtimeInfo", "Unknown Host").get(
         "agentComputerName", "Unknown Host")
     threat_name = threat.get("threatInfo", "Unknown Threat").get(
@@ -75,6 +89,7 @@ def send_to_discord(threat):
 
     message = (
         f"🚨 **Alerta SentinelOne**\n"
+        f"💼 **Cliente:** {cliente}\n"
         f"🖥️ Host: `{hostname}`\n"
         f"🦠 Amenaza: `{threat_name}`\n"
         f"🔍 Proceso Originador: `{threat_originator}`\n"
