@@ -107,6 +107,7 @@ Cuando encuentra una amenaza no resuelta (`incidentStatus == "unresolved"`), env
 
 ```
 🚨 Alerta SentinelOne
+💼 Cliente: {cliente}
 🖥️ Host: 'LAPTOP-PEPE'
 🦠 Amenaza: 'HackTool.Win32'
 🔍 Proceso Originador: 'powershell.exe'
