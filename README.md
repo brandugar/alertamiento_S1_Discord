@@ -25,7 +25,7 @@ ALERTAMIENTO/
 ├── requirements.txt        # Dependencias de Python
 ├── Dockerfile              # Imagen de Docker
 ├── compose.yml             # Docker Compose
-├── .env                    # Variables de entorno (NO lo subas al repo)
+├── .env                    # Variables de entorno (NO se sube al repo)
 ```
 
 ---
